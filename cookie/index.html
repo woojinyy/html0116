@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쿠키실습</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" 
+    integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" 
+    crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" 
+    integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer">
+    </script>
+    <script>
+        const del=()=>{
+            alert("삭제");
+            let res =  $.removeCookie('cmem_name',{path:'/cookie'});
+            let res2 =  $.removeCookie('cmem_id',{path:'/'});
+            console.log("res삭제"+res)//true이면 삭제 false이면 실패
+            console.log("res2삭제"+res2)
+        }
+    </script>
+</head>
+<body>
+    쿠키실습
+    <hr>
+    <!-- 쿠키쓰기
+    $.cookie('키','값',{expires:7,path:'/'})  도메인과 패스가 일치해야 저장이 된다
+        
+        쿠키 읽기
+        $.cookie('키')
+        
+        쿠키 삭제
+        $.removeCookie('name',{path:'/'})
+    -->
+    <script>
+        $.cookie('cmem_name','이걸나진이',{expires:7,path:'/cookie'})
+        $.cookie('cmem_id','tomato',{expires:10,path:'/'})
+        console.log($.cookie('cmem_name'));
+       
+        console.log($.cookie('cmem_id'));
+    </script>
+    <input type="button" onClick="del( )"value="쿠키삭제"/>
+    <!-- 주의: button태그 사용시 submit이슈가 있으니 주의할것 새로고침이 일어남
+        expires(표준,jquery-cookie.js지원):-1 도 쿠키는 삭제된다
+        expires:1 24시간 유지 시간단위, 초단위 max-age지원
+    -->
+</body>
+</html>

@@ -1,0 +1,126 @@
+*{
+    box-sizing: border-box; /*마진 패딩 포함하는 사이즈 계산 가능하게 하는 코드 */
+   /* border: 1px solid green;마진 패딩 등 기준선으로 삼아 눈에 보이게  조절*/
+}
+body{
+    margin: 0;/* 빈공간없이 왼쪽 상단 모서리(0,0)에 붙이기 */
+}
+a{
+    text-decoration: none;/* 링크 밑줄 삭제 */
+}
+ul{
+    list-style: none;/* 구슬머리 삭제 */
+    padding-left: 0;/* 구슬을 삭제하고 난 뒤 남은 여백 0만들기 */
+
+}
+.navbar-logo{
+    font-size: 28px;
+    font-weight: 400;
+    font:bold;
+}
+#navbar{/* 아이디 접근은 앞에 #을 붙여준다 */
+display: flex;/*하나의 플렉스 아이템이 자신의 컨테이너가 차지하는 공간에 맞추기 위해 크기를 키우거나 줄이는 방법을 설정하는 속성입니다 */
+/* 스킬 인벤토리  ul좌우로 펼치기 */
+width: 100%;/* 반응형웹(ex버거아이콘) */
+height: 60px;
+justify-content: space-between;
+background-color: rgba(31, 236, 8, 0.644);
+position: fixed;/*  휠 움직여도 고정 */
+color: black;
+
+}
+.navbar-menu{
+    display: flex;/*ul 안에 li 좌우로펼치기 블럭 인라인 인라인블럭*/
+}
+/* 메뉴 아이템 추가 */
+.navbar-menu-item{
+    margin: 0 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 10px;
+  
+}
+/* Home버튼 강조 */
+.navbar-menu-item.active{
+    border: 1px solid rgb(55, 151, 4);
+}
+.navbar-menu-item:hover{
+    background-color: rgb(66, 184, 8);
+    color: black;
+}
+/* 버거아이콘 */
+.burger-toggle-btn{
+    position: absolute;
+    font-size: 24px;
+    display:none;
+
+}
+/* 섹션 공통 */
+.section{
+    text-align: center;
+    margin: auto;
+}
+.hcontent{
+    
+    width: 100%;
+    height: 500px;
+    background-image: url('../../../image/sample/camping-night2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.mecontent{
+    background-color: cornsilk;
+    width: 100%;
+    height: 500px;
+}
+.scontent{
+    background-color:rgb(81, 42, 3);
+    width: 100%;
+    height: 500px;
+    font-size: large;
+    font: bold;
+    color: rgb(159, 241, 91);
+}
+
+/*블럭요소 안에 블럭요소 사용시 벌어짐발생
+부모자식관계로 묶어벌이기 */  
+#contact{
+    position: relative/* 부모 */;
+}
+.ccontent{
+    position: absolute/* 자식 */;
+    background-color: chartreuse;
+    width: 100%;
+    height: 200px;
+}
+.contact-email{
+    color: burlywood;
+}
+.contact-links{
+    color: burlywood;
+    font-size: 48px;
+    transition: all 300ms ease-out;
+}
+
+.contact-links:hover{
+transform: scale(1.1);
+}
+/* 반응형 웹 추가 768px보다 작아지면 발동 */
+@media screen and (max-width:768px) {
+    .burger-toggle-btn{
+        display: block;/* 버거아이콘 visible */
+    }
+    #navbar{
+        flex-direction: column;   /* 메뉴바의 내용이 아래로 출력 */
+
+        align-items: flex-start;        /* 메뉴가 앞쪽으로 배치 */
+    }
+    .div-menu{
+        width: 100%;/* 메뉴아이템의 길이가 전체를 채움 */
+    }
+    .navbar-menu{
+        flex-direction: column;/* 메뉴가 아래방향으로 보여지기 */
+        display: block;
+    }
+    
+}

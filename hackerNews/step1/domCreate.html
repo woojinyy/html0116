@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">디브태그는 외적으로 아무 변화가 없다 여기 덮어쓰기 되는지 뭉개지는지 uppend되는건지 </div>
+    <script>
+        /* 여기서 document는 domCreate.html문서 전체를 받는 객체임 
+        write함수는 document 내장 객체가 제공하는 함수
+        */
+       /* 태그에 url링크 쓰고 올리는 이짓거리가 말이 되나? */
+        document.write("<ul>");
+        document.write("<li>제목1</li>");
+        document.write("<li>제목2</li>");
+        document.write("<li>제목3</li>");
+        document.write("</ul>");/* document는 내장객체  */
+    </script>
+</body>
+</html>

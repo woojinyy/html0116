@@ -1,0 +1,16 @@
+div, span{/* 블럭요소  */
+    width: 100px;
+    height: 100px;
+    border-color:2px dotted red;
+    margin-bottom: 20px;
+    
+}
+div{
+    background-color: aquamarine;
+    display:inline-block;/*  인라인-블럭으로 지정된 엘리먼트는 기본적으로 인라인엘리먼트처럼  전후 줄바꿈 없이 한줄에 나란히 배치된다 하지만 인라인엘리먼트에서 불가능했던 사이즈조정 (가로,세로,마진,패딩)*/
+}
+span{/* 인라인  수평으로 쌓인다*/
+   background-color: blue;
+   display: block;/* div태그처럼 세로방향으로 쌓인다 */
+
+}

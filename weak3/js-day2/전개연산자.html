@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전개연산자</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let hobby=['게임','헬스','독서']
+        let hobby2=['코딩','보드','운동']
+        let merge=[...hobby,...hobby2]
+        document.write(merge)
+        document.write("<br/>")
+        document.write("<br/>")
+        merge.forEach((item)=>{
+            document.write(item+"<br/>")
+        })
+        document.write("<br/>")
+        merge.forEach((변수이름내맘대로,index)=>{
+            document.write(변수이름내맘대로,index+"<br/>")
+        })
+        merge.forEach((변수이름내맘대로,index)=>{
+            document.write(`<font size="20">${변수이름내맘대로} ${index}<br/>`)
+        })
+    </script>
+</body>
+</html>
+
+<!-- 
+전개연산자  spread syntax
+merge해봅시다
+ -->

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경이미지1</title>
+    <style>
+        *{
+            border: 1px solid red;
+        }
+        body{
+            height: 3000px;/* 스크롤바 넣어볼까 */
+        }
+        div{
+            width: 500px;
+            height: 800px;
+            /*요소배경이미지 위치 지정할 때 background-postion 사용 */
+            
+            background-color: aquamarine;
+            /* background-color: transparent; */
+            /* 수평만 반복 repeat-x 수직만 반복 repeat-y  */
+            background-repeat: no-repeat;
+            /* contain  비율 자체는 유지 요소의 더 좁은 너비에 맞춤*/
+            /* auto  이미지의 실제 크기  */
+            background-size: auto;/* 비율자체는 유지 요소의 더 넓은 너비에 맞춤 */
+            background-image: url("../image/sample/apple_280x280.jpg");
+            background-position: center center;/*  배경이미지의 위치 */
+            /* 이미지 고정 스크롤만 내려감 */
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi provident aliquam repellat consequuntur quaerat! Assumenda eum tempore ipsam libero accusamus?
+    </p>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>구글로그인-모듈화 사용type="module"</title>
+  </head>
+  <body>
+    <!-- type = text/javascript 사용하는 경우와 module 사용 경우 호환이 안되는 부분이 발생 -->
+    <!-- ECMAScript6기준으로 작업 vs WWW CommonJS기준   -->
+    <script type="module">
+      import { firebaseApp } from "../service/firebase.js";
+      import AuthLogic from "../service/authLogic.js";
+      const authLogic = new AuthLogic();
+      console.log(authLogic);
+      const btnGoogle = document.querySelector("#btnGoogle");
+      btnGoogle.addEventListener("click", (eventparameter) => {
+        eventparameter.preventDefault(); //default submit방지용->이벤트 버블링 방지
+        /*
+        버튼태그 사용시 디폴트 타입이 submit이어서 홈 전송이 일어나게 되며
+        이럴경우 해당 페이지가 refresh발생으로 이상동작 발생
+        반드시 버튼태그로 click 이벤트 처리시에는 주의할것
+         */
+        //console.log(eventparameter.target + eventparameter.currentTarget);
+        authLogic.login("Google").then((snapshot) => {
+          console.log(snapshot);
+          //구글 서버에서 응답으로 받은 정보를 문자열로 변환함
+          const temp = JSON.stringify(snapshot);
+          //위에서 변환 된 정보를 배열로 변환
+          const jsonDoc = JSON.parse(temp);
+          console.log(jsonDoc.user.displayName);
+          //uid -구글에서 발급한 고유 아이디
+          //displayName-구글 계정 이름
+          //email - 구글 계정 이메일
+        });
+      }); //end of event
+      const moveMain = (displayName) => {
+        console.log("moveMain" + displayName);
+        window.location.href = "./index.html?displayName=" + displayName;
+      };
+      //구글 서버에서 상태값의 변화를 체크하고 자동으로 호출해준다
+      //개발자가 호출하는 함수가 아니다
+      //파라미터 user가 바뀌면 자동으로 호출된다
+      authLogic.onAuthChange((user) => {
+        //console.log("onAuthChange" + user.displayName);
+        //사용자가 바뀌면 유저정보에서 유저 가져오기
+        //user.displayName&&moveMain(user.displayName);
+        //***********************************************************
+        //아래 구문 분석 필수 -리액트에서 빈번
+        user&&moveMain(user.displayName);
+        //user.displayName &&document.write('<a href="javascript:singOut();">로그아웃</a>'); 
+        //유저정보가참이면 넘겨서  유저.uid 가져오기
+        function singOut(){
+          console.log("로그아웃")
+          //import문 사용시 주의 할 것은 반드시 type= module 추가할 것
+          //text/javascript와 module 사이에는 호환이 안됨 이 차이를 고려한 코딩을 전개해야한다
+          //직접함수호출X 태그의 ID를 사용하여 addEventListener로 함수처리 해야한다
+          authLogic.logout();
+        }
+      });
+      //************************************************************
+    </script>
+    <button id="btnGoogle">구글로그인</button>
+  </body>
+</html>

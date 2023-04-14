@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>화살표함수</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //1번함수
+      function hap(a1, a2) {
+        console.log(a1);
+      }
+      //3번함수 - 일급함수
+      const hap1 = function (a1, a2) {
+        const result = a1 + a2;
+        return result;
+      };
+      //화살표 함수
+
+      const hap2 = (a1, a2) => {
+        // function 을 지우고 화살표를 넣어준다
+        const result = a1 + a2;
+        return result;
+      };
+      const hap3 = (a1) => {
+        //파라미터(인자)가 하나면 괄호 생략 된다
+        const result = a1;
+        return result;
+      };
+console.log( hap());
+console.log(hap(1, 2));
+      hap(); //undefined 지역변수
+      hap(1, 2); //호출될때 재정의 call by value a1=1, a2=2
+      hap(3);
+      hap1(3, 3);
+      console.log(hap1(3, 3));
+      document.write(hap1(3, 3))
+      document.write('<br/>')
+      
+      hap2(3, 5);
+      console.log( hap2(3, 5));
+      document.write(hap2(3, 5))
+      hap3(1);
+      console.log( hap3(1));
+      //파라미터의 개수가 달라도 타입이 달라도  같은놈으로 취급한다
+    </script>
+  </body>
+</html>
+
+<!-- 
+Arrow function
+기존의 익명함수를 좀 더 사용하기 유용하게  축약한 형태
+내부로 전달되는 파라미터가 하나면 괄호 생략 가능
+자바스크립트는 같은이름의 함수를 중복정의 못한다 = 메소드 오버로딩이 없다 =함수 이름을 무조건 다르게 정의 해야 한다 =/ 자바랑 다르다
+ -->

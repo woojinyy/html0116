@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>공지사항 작성하기</title>
+    <link rel="stylesheet" href="./quiz1.css" />
+  </head>
+
+  <body>
+    <form action="insert.no" method="post">공지사항 작성하기</form>
+
+    <br />
+
+    <label><b>제목</b></label>
+    <input type="title" name="title" placeholder="제목을 입력하시오" required />
+    <br />
+
+    <label><b>내용</b></label>
+    <input
+      type="text"
+      name="content"
+      placeholder="내용을 입력하시오"
+      required
+    />
+    <br />
+
+    <label><b>첨부파일</b></label>
+    <input type="file" name="uploadfile" />
+    <br />
+    <div class="submit">
+      <input type="submit" name="submit" value="작성하기" />
+    </div>
+  </body>
+</html>

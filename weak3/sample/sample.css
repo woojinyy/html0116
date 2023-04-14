@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+    border-radius: 6px;
+
+}
+
+body{
+    border: 1px solid red;
+}
+.top{
+    height: 50px;
+    border: 1px solid red;
+}
+.img{
+
+    height: 300px;
+    width: 300px;
+    background-image: url('../../image/sample/apple_280x280.jpg');
+    border-radius: 50%;
+    border: 1px solid red;
+    border-image-width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.name{
+    height: 50px;
+    border: 1px solid red;
+}
+.contact-email{
+    border: 1px solid red;
+    font-size: 20px;
+    color: rebeccapurple;
+    font: bolder;
+    text-align: center;
+}
+.contact-links1{
+
+    font-size: 20px;
+    border: 1px solid red;
+}
+.contact-links2{
+
+    font-size: 20px;
+    border: 1px solid red;
+}

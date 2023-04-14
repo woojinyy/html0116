@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+</head>
+<body>
+    <script type="text/javascript"> //브라우저는 마임타입을 보고 판독한다
+    /* 
+        배열:Array
+        연관된 값들을 하나의 그룹으로 묶어서 나열한 구조
+
+    */
+const fruits=['🍌','🥭','🍇','🍉']
+//원시적 코드(prototype)에서는 index값이 있다
+for(let i=0;i<fruits.length;i++){
+document.write(fruits[i])
+}
+//forEach문도 기억해라 자주 쓰인다 파라미터에 index사용 가능 
+
+
+fruits.forEach(element => console.log(element));
+fruits.forEach((element, index) => console.log(index,element));
+fruits.forEach((element, index, fruits) =>{ 
+    console.log(index,element,fruits)
+    document.write(index,"</br>",element,"</br>",fruits);
+});
+    </script>
+</body>
+</html>

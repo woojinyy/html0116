@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WorkoutTracker</title>
+    <link rel="stylesheet" href="./workout.css" />
+    <script
+      src="https://kit.fontawesome.com/712b45d512.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let count = 0;
+      let items = [
+        //배열을 이용해서 초기화 해보자
+        { id: 1, name: "벤치", count: 0 },
+        { id: 2, name: "데드", count: 0 },
+        { id: 3, name: "스쿼트", count: 0 },
+      ];
+      const handleIncrement = (index) => {
+        items[index].count += 1;
+        const cnt = document.querySelector(`.workout-count${index}`);
+        cnt.innerHTML = items[index].count;
+      };
+
+      const handleDecrement = (index) => {
+        const count = items[index].count - 1;
+        items[index].count = items[index].count <= 0 ? 0 : count;
+        const cnt = document.querySelector(`.workout-count${index}`);
+        cnt.innerHTML = items[index].count;
+      };
+
+      const handleDelete = (id) => {
+        const workouts = items.filter((item) => item.id != id);
+        console.log(workouts);
+        items = [...workouts];
+        console.log(items); //스프레드연산자를 통해 얕은 복사가 되었다.-주소번지가 넘어간다=
+        init();
+      };
+      const handleAdd = () => {
+        const name = document.querySelector(".add-input").value; //클래스 접근시에는 반드시  .찍어라
+        const workouts = [...items, { id: items.length + 1, name, count: 0 },];
+        document.querySelector(".add-input").value = "";
+        items = [...workouts]; //스프레드연산
+        init(); //화면 초기화 해줘야해
+      };
+
+      const init = () => {
+        console.log("init호출 =>" + items.length); //3
+        console.log(items);
+        let lis = " ";
+        for (let i = 0; i < items.length; i++) {
+          lis += `<li class="workout">`;
+          lis += `<span class="workout-name">${items[i].name}</span>`; //배열 인덱스값은 0부터라
+          lis += `<span class="workout-count${i}">${items[i].count}</span>`;
+          lis += ` <span class="workout-count"></span>`;
+          lis += `<button class="workout-button workout-increase"onclick="handleIncrement('${i}')">`;
+          lis += ` <i class="fas fa-plus-square"></i>`;
+          lis += `</button>`;
+          lis += `<button class="workout-button workout-decrease"onclick="handleDecrement('${i}')">`;
+          lis += `<i class="fas fa-minus-square"></i>`;
+          lis += `</button>`;
+          lis += `<button class="workout-button workout-delete"  onclick="handleDelete(${items[i].id})" >`;
+          lis += `<i class="fas fa-trash"></i>`;
+          lis += ` </button>`;
+          lis += `</li>`;
+        }
+        const ul = document.querySelector(".ul");
+        ul.innerHTML = lis;
+      }; //end of init
+    </script>
+  </head>
+  <body>
+    <script>
+      window.addEventListener("load", function (event) {
+        init();
+      });
+    </script>
+    <div class="container">
+      <input type="text" class="add-input" placeholder="운동제목" />
+      <button class="add-button" onclick="handleAdd()">추가</button>
+      <ul class="ul"></ul>
+    </div>
+  </body>
+</html>

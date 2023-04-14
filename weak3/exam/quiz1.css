@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  list-style: none;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 20px;
+}
+
+input[type="title"] {
+  height: "60px";
+}
+input[type="text"] {
+  text-align: top;
+  width: 300px;
+  height: 400px;
+  font-size: 18px;
+  padding: 10px;
+  margin: 5px;
+}
+div {
+  margin-left: 150px;
+  margin-top: 15px;
+}
+input[type="submit"] {
+  margin-top: 5px;
+}

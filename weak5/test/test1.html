@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./test1.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>join</title>
+    <h3>회원 가입 양식</h3>
+  </head>
+  <body>
+    <form >     
+        <table >
+            <tr >
+                <td> 아이디 <input type = "text" name = "uid" id="uid"  style="margin-left:50px">
+                        <input type="button" value="중복확인" onclick="checkid()">
+                        <div id="result"></div>
+                </td>
+            </tr>    
+            <tr>
+                
+            </tr>
+            <tr>
+                <td> 비밀번호 <input type = "text" name = "pw" id="pw" style="margin-left:35px"></td>
+            </tr>
+            <tr>
+                <td> 비밀번호 확인<input type = "text" name = "pw_check"id="pw_check" style="margin-left:3px"></td>
+            </tr>
+            <tr >
+      
+                <td >
+                    지역
+                    서울<input  type="radio" name="loc">
+                    부산<input type="radio" name="loc">
+                    대구<input type="radio"  name="loc">
+
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center;">
+                    <input type="reset" value="초기화" >
+                    <input type="submit" value="회원가입">
+                </td>
+            </tr>
+            
+        </table>
+    </form>
+        <!-- 양식 끝 -->
+        <!-- 기능구현 -->
+        <script type="text/javascript" >
+            let uid = document.querySelector('#uid');
+            let pw = document.querySelector('#pw');
+            let pw_check = document.querySelector('#pw_check');
+function checkid(uid) {
+    const idInput = document.getElementById('uid');
+    const idcheck1 = /^[a-z][0-9!@#]{5,11}$/;
+
+    return idcheck1.test(uid);
+}
+
+if(!$('input:radio[name=loc]').is(':checked')>0){
+    alert("지역을 선택해 주세요")
+}
+
+        </script>
+</html>

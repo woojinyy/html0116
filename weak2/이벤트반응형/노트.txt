@@ -1,0 +1,12 @@
+이벤트
+이벤트란? 어떤일이 발생 =action ,request
+종류
+1. 사용자가 발생시키는-click, mouseover,mousemove,mousewheel,scroll
+2. 시스템이 발생시키는 - load, error
+
+이벤트연결 방법
+1. eventHandler
+DOM요소.onclick =()=>{}
+
+2. 내장함수 
+DOM요소.addEventListener('이벤트명'.()=>{})

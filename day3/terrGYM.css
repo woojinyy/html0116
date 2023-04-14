@@ -1,0 +1,96 @@
+@charset "UTF-8";
+  @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
+
+  *{
+    margin: 0px;/* 화면 좌측 상단 기준 외부여백 0(탑바텀레프트라이트)으로 초기화 */
+    padding: 0px;/* 화면 좌측 상단 기준 내부 여백 0 */
+    box-sizing: border-box;/* 여백을 포 함하는 사이즈 계산 여백이 5 -> 양쪽으로 10 따라서 콘텐츠사이즈는 90 */
+    /* border: 1px solid red;*/
+}
+body{
+    background-color: black;
+}
+ul{
+    list-style-type: none;/* 메뉴앞에 글머리구슬 없애기 */
+}
+a{/* 링크 연결  */
+    text-decoration: none;/* 밑줄 제거 */
+}
+header{
+    width: 100%;/* 반응형이라 %로 놓는다 */
+    display: flex;/* 인라인,블럭,인라인블럭,플렉스 */
+    border-bottom: 1px solid #aaa;/* 바닥에 선 그리기  점선은 dotted*/
+    justify-content: space-between;/* 디스플레이 플렉스 일 때만 자간 넓게  */
+    align-items: center;/* 가운데 배치 */
+    top: 0px;/* 꼭짓점에서 y축좌표 */
+    left: 0px;/* 꼭짓점에서 x축좌표 */
+    color: #fff;/* 글자색 */
+    z-index: 2;/* 레이어 계층번호 비디오 위에 글씨가 올라와야해 */
+}
+header h1{
+    color: #fff;
+    z-index: 2;
+}
+header .gnb li { /* header태그 아래 ul태그 class를 nav의 속성을 정해줄 때 변수 아래 li자손태그 */
+    margin: 0px 20px;/* 메뉴이름 오른쪽 왼쪽 20px */
+}
+header .gnb li a {/* 앵커 태그-최근에 본 상품  링크기능/ 클릭하면 페이지 이동*/
+    color: #fff;
+}
+.gnb{
+    display: flex;/* 인라인, 블럭 또는 인라인블럭 *//* ul태그 아래 li태그는 수직방향 배치-> 수평방향으로 배치해줌 */
+    z-index: 2;
+}
+header .sns li {
+    margin: 0px 10px;/* 탑 바텀은 0 left right는 10 */
+    z-index: 2;
+    
+}
+.sns{
+    display: flex; /* 옆으로 늘어놓기 *//* ul태그 아래 li태그는 수직방향 배치-> 수평방향으로 배치해줌*/
+   
+}
+header .sns li a{
+    font-size: 16px;/* a태그 안에 내용 글자크기 조정- 이미지 크기가 조정된다 */
+    color: #fff;/* 색상값을 16진수로 표현 0~9~a~f*/
+}
+div{/* 비디오관련 태그  */
+    width: 100%;/* 폭은 가득 채움 */
+    height: 100vh;/* v=viewport -보이는 화면의 높이값 */
+    position: absolute;/* 릴레이티브,앱솔루트 좌표값에 따라서 배치가 된다 */
+    top: 0px;
+    left: 0px;
+    overflow: hidden;/* 스크롤바 숨김 */
+    z-index:1 ;/* 계층값 */
+}
+
+div video{
+    width: 100%;
+    height:  100%;
+    object-fit: cover;/* 영상이 비디오에 꽉차게 해줌 */
+}
+.txt{
+    position:absolute;
+    left:6vw;
+    top:50%;
+    transform: translate();
+    z-index: 2;    
+}
+.txt p{
+    font: normal 6vw/1"Fredericka the Great";
+    color: aliceblue;
+}
+footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font: 12px/1"arial"; /* 글자크기/로우의높이값 글꼴 */
+    text-align: center;/* 글자의 위치 가운데 배치 */
+    letter-spacing: 2px;/* 알파벳 사이의 간격 */
+    z-index: 2;/* 계층값 */
+    padding: 5vh 5vw;/* v는 viewport 보여지는 공간에서의 내부 여백값*/
+    color: white;
+
+}

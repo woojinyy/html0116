@@ -1,0 +1,29 @@
+1.API키
+AIzaSyCE0e1auNwdEvD4SJGlL2DSMj2l9AVcN30
+1-1 kh API키
+AIzaSyBDEIy9NwR-tkmaC0REb_yWytU9IDrzP9E
+
+2.클라이언트 ID
+809925718856-0cdit5mn10q0hs15ljtocnpl61549c71.apps.googleusercontent.com
+OAuth ID발급은 
+firebase console에서 Authentication에서 -> sign-in-method이동-> 새업체 정보 추가 
+
+->구글 선택-> 사용설정 버튼 활성화 -> 저장
+웹 클라이언트 ID 690942985220-vr8vccmhehdjo4bnt6ic4q34ituf2gab.apps.googleusercontent.com
+구글 클라우드 홈페이지-> API및 서비스 -> 승인된 자바스크립트 원본-> localhost:5500, localhost등록
+
+403번 에러발생, Domain~~~~ 클라이언트ID
+클라이언트 secret
+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
+
+3.애플리케이션 홈페이지
+http://localhost:5500/google/index.html
+
+4.승인된 자바스크립트원본- 사용중인 웹서버의 포트번호 반드시 확인할것
+http://localhost:5500
+http://localhost
+
+5.승인된 리디렉션
+http://localhost:5500/googleLongin.html
+http://localhost:5500/modalLongin.html
+http://localhost:5500/firebaseJSTest1.html

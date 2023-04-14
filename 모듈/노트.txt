@@ -1,0 +1,4 @@
+api export
+모듈방식으로 사용할거야
+json에 type : module 작성 잊지 않도록
+

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <body onload="init()"> -->
+    <!--     <script>
+      window.load();
+    </script> -->
+    <form id="f_test" method="get" action="UserServlet">
+      <fieldset style="width: 400px">
+        <legend>필수 입력 항목</legend>
+        <table>
+          <tr>
+            <td><label for="ID">ID</label></td>
+            <td>
+              <input id="ID" type="text" />
+              <!-- 
+                button 기본타입 = submit->화면이 바뀐다 주의 submit이슈
+                input[button] 기본타입 = button 
+                a ->href=> 페이지이동 =location.href = hashchange or 함수호출도 가능하다(페이지 이동과 관련 X )=화면전환 발생하지않는다
+               -->
+
+              <!-- id중복확인은 버튼이 눌릴 때 마다 이벤트가 발생되어야 한다
+                        반드시 addEventListener로 처리해야한다 
+                        onclick로 처리하면 마지막 한번만 처리된다
+            -->
+              <input type="button" value="중복확인" id="check" />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="pwd">비밀번호</label></td>
+            <td><input id="pwd" type="password" /></td>
+          </tr>
+          <tr>
+            <td><label for="pwd2">비밀번호 확인</label></td>
+            <td><input id="pwd2" type="password" /></td>
+          </tr>
+          <tr>
+            <td><label>지역</label></td>
+            <td>
+              <input id="seoul" type="radio" name="loc" class="loc" /><!-- 나는
+              여기에 value값을 줬는데 그러면 체크하더라도 if문 각각 다
+              걸어줘야해 -->
+              <label for="seoul">서울</label>
+              <input
+                id="busan"
+                type="radio"
+                name="loc"
+                class="loc"
+              /><!-- name으로는 접근이 안되는거고 (배열로 못받고)id는 유니크하니까
+              배열이안되고 -->
+              <label for="busan">부산</label>
+              <input
+                id="daegu"
+                type="radio"
+                name="loc"
+                class="loc"
+              /><!-- 배열로
+              처리하기 위해서는 class이름을 동일하게 똑같이 줘봅시다 -->
+              <label for="daegu">대구</label
+              ><!-- class를 주면 배열로 바꿀 수 있다. -->
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input type="button" value="초기화" />
+              <input type="button" value="회원가입" id="btnJoin" />
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+    </form>
+    <script>
+      const check = document.querySelector("#check");
+      check.addEventListener("click", () => {
+        const regEx = /^[a-z][a-zA-Z0-9!@#]{5,11}$/; //
+        //id값 읽어오기
+        const user = document.querySelector("#ID");
+        let str = user.value; //사용자가 입력한 id 읽어오기
+        let isFlag = false; //아이디 판정
+        if (str.length != null && str.length > 0) {
+          isFlag = regEx.test(str); //테스트한 내용 담기
+        }
+        const color = isFlag ? "green" : "red"; //3항연산자 isFlag가 참이야? 그럼 green 아니면 red
+        console.log(isFlag); //참거짓 확인
+        console.log(color); //isFlag의 값에 따른 color값
+        //isFlag 값을 백그라운드에 넣어야해 참일 때 거짓일 때 각각
+        if (isFlag == true) {
+          user.style.backgroundColor = color;
+        } else {
+          user.style.backgroundColor = color;
+        }
+      }); //end of event
+      const locs = document.querySelectorAll(".loc"); // 배열로 가져오기
+      console.log(locs);
+      //사용자가 선택한 지역값을 담을 변수 선언
+      let user = "";
+      console.log("before : " + user);
+      const locss = ["seoul", "busan", "incheon"]; //배열을 하나 정의해서해봅시다
+      for (let i = 0; i < locs.length; i++) {
+        locs[i].addEventListener("click", () => {
+          locs[i].value = locss[i];
+          user = locs[i].value;
+          console.log("after :" + user);
+        });
+      }
+      //이벤트 걸어
+      const btnJoin = document.querySelector("#btnJoin");
+      btnJoin.addEventListener("click", () => {
+        if (user === "" || user.length === 0) {
+          alert("지역을 선택 하세요");
+          return; //if문에서 return 은 해당 함수를 탈출
+        }
+        console.log("지역을 선택하지 않으면 이문자열은 안보임");
+      });
+      /*     const init = () => {
+          //insert here -when DOM tree has been done
+          /* document.querySelector(#)
+              document.querySelector()
+              document.querySelector(이름)
+              document.querySelectorAll(이름)->배열로 자동전환됨 브라우저가 자동으로해줌 
+              console.log("init호출");
+              console.log(document.querySelector("#f_test"));
+            }; 
+            */
+    </script>
+  </body>
+</html>

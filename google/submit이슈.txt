@@ -1,0 +1,10 @@
+< a href='javascript:함수()></a> 이 경우 submit이슈 없음
+
+<input type="button" value="전송"> 이 경우 submit이슈 없음
+
+<button>전송</button> submit전송 이슈 있음
+해결책
+=> event.preventDefault(); 작성할 것 이벤트 버블링 방어
+
+페이지 새로고침이 발생하거나 화면이 하얗게 변해요
+화면이 계속 렌더링되고있어요 =계속f5누르는것과 같은 

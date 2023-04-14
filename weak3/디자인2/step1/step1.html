@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>소개 step1</title>
+    <script
+      src="https://kit.fontawesome.com/712b45d512.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./step1.css" />
+  </head>
+  <body>
+    <!-- Navbar start-->
+    <nav id="navbar">
+      <!-- LOGO start -->
+      <div class="navbar-logo">
+        <i class="fab fa-diaspora"></i>
+        <a href="#">Skill inventory</a>
+      </div>
+      <!-- LOGO end -->
+      <!-- 메뉴아이템 -->
+      <div class="div-menu">
+        <ul class="navbar-menu">
+          <li class="navbar-menu-item active" data-link="#home">Home</li>
+          <li class="navbar-menu-item" data-link="#me">나에대해</li>
+          <li class="navbar-menu-item"data-link="#skills">보유기술</li>
+          <li class="navbar-menu-item"data-link="#project">참여 프로젝트</li>
+          <li class="navbar-menu-item"data-link="#connact">Connact</li>
+        </ul>
+      </div>
+      <!-- 버거아이콘 -->
+      <div class="burger-toggle-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+      <script>
+        const navbarMenu = document.querySelector(".navbar-menu");
+        const burgericon = document.querySelector(".burger-toggle-btn");
+        burgericon.addEventListener("click", () => {
+          navbarMenu.classList.toggle("open");
+        });
+      </script>
+    </nav>
+    <!-- Navbar end-->
+    <!-- Home start-->
+    <section id="home" class="section">
+      <!-- 메뉴 클릭시 data  link값으로 사용 -->
+      <div class="hcontent"></div>
+    </section>
+    <!-- Home end-->
+    <!-- Me start-->
+    <section id="me" class="section">
+      <div class="mecontent">나에대해</div>
+    </section>
+    <!-- Me end-->
+    <!-- Skills start-->
+    <section id="skills" class="section">
+      <div class="scontent">보유기술</div>
+    </section>
+    <!-- Skills end-->
+    <!-- Project start-->
+    <section id="project" class="section">
+      <div class="pcontent">참여 프로젝트</div>
+    </section>
+    <!-- Project end-->
+    <!-- Connact start-->
+    <section id="connact" class="section">
+      <div class="ccontent">
+        <h2 class="contact-email">이메일주소: woojiny07@gmail.com</h2>
+        <div class="contact-links">
+          <a href="https://github.com/woojinyy/dev_java" target="_blank"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a href="#" target="_blank"><i class="fa fab fa-line"></i></a>
+        </div>
+
+        <p class="contact-rights">2023 &copy; ALL RIGHTS RESERVED</p>
+      </div>
+    </section>
+    <!-- Connact end-->
+  </body>
+</html>
+
+<!-- 
+    emmet 단축키
+    ul.navbar-menu>li.navbar-menu-item*5
+ -->

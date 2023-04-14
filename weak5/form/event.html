@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form 태그 event</title>
+  </head>
+  <script type="text/javascript">
+    const send = (e) => {
+      console.log("전송 호출" + e);
+      e.preventDefault();
+    };
+  </script>
+  <body>
+    <form id="f_test" action="a1.html" method="get">
+      <input type="text" name="" id="" />
+
+      <button type="submit" id="btnSend">전송</button>
+      <script>
+        const btnSend = document.querySelector("#btnSend");
+        btnSend.addEventListener("click", (event) => {
+          event.preventDefault();
+          console.log("전송버튼 클릭 ");
+        });
+      </script>
+    </form>
+  </body>
+</html>

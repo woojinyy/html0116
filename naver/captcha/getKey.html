@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //fetch 기본꼴만으로는 부족 header가 필요하다
+      fetch("http://example.com/movies.json")
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+
+      const myHeaders = new Headers();
+      myHeaders.append("X-Naver-Client-Id", "Dnzc7IwsWy2KOmF7D15i");
+      myHeaders.append("X-Naver-Client-Secret", "kcWQ7mOUpG");
+
+      const requestOptions = {
+        method: "GET",
+        headers: myHeaders,
+        redirect: "follow",
+      };
+
+      fetch("https://openapi.naver.com/v1/captcha/nkey?code=0", requestOptions)
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.log("error", error));
+    </script>
+  </body>
+</html>

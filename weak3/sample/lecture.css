@@ -1,0 +1,122 @@
+*{
+    margin: 0;/* 위아래오왼 외부여백 0 */
+    padding: 0;/* 위아래오왼 내부여백 0 */
+    box-sizing: border-box;/* 여백포함한 크기로 계산 */
+    /*border: 1px solid red; 여백,스타일을 죽인부분 */
+}
+ul{
+    list-style: none;/* 구슬제거 */
+}
+a{
+    text-decoration: none;/* 밑줄제거 */
+}
+body{
+    background-color: rgba(202, 244, 19, 0.224);/* 전체문서 배경 */
+}
+/* section 태그로 전체 감싸기 */
+.wrap{
+    width: 340px;/* 가로크기 */
+    padding: 30px;/* 내부여백크기 */
+    background-color: wheat;/* 전제배경색상 */
+    position: absolute;/*  좌표값에 따른 배치를 위한 속성값*/
+    top: 50%;/* y축 중앙 */
+    left: 50%;/* x축 중앙 */
+    transform: translate(-50%,-50%);/* 요소의 중앙 위치를 잡음 */
+}
+.wrap .menu a{
+    font-size: 20px;
+    color: rgb(67, 109, 151);
+}
+.wrap .menu a:nth-of-type(1){
+    float: left;
+}
+.wrap .menu a:nth-of-type(2){
+    float: right;
+}
+.wrap .menu::after {
+    content: "";
+    display:  block;
+    clear: both;
+}
+.wrap .profile{
+    width: 100%;
+    text-align: center;
+}
+.profile img{
+    border-radius: 50%;
+    width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;    
+}
+.wrap .profile h1{
+    font:bold 22px/1 "arial";
+    color: rgb(9, 95, 141);
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+.wrap .profile p{
+    font:bold 12px/1 "arial";
+    color: rgb(9, 95, 141);
+    margin-bottom: 15px;
+}
+/* a태그(인라인요소)를 css활용 버튼으로 바꿔보기 */
+.wrap .profile a{
+    display: inline-block;
+    padding: 10px 20px;
+    color : white;
+    background-color: rgb(9, 95, 141);
+    margin-bottom: 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font: bold 12px/30px "arial";
+    background: linear-gradient(to right, rgb(9, 95, 141), #000000);
+}
+    
+/* 인라인요소는 기본적으로 가운데 정렬이 되고 
+만일 block요소를 주면 기본적으로왼쪽정렬이 된다 
+이것을 가운데 오게 할 땐 margin에 auto를 주면된다. */
+.wrap .contact{
+    margin-bottom: 10px;
+}
+.wrap .contact li{
+    width: 100%;
+    padding: 10px 0px;
+    border-bottom:  1px solid;
+}
+.wrap .contact li i{
+    width: 20%;
+    text-align: center;
+}
+
+.wrap .contact li span{
+    font: 11px/1 "orbitron";
+    color:rgb(9, 95, 141);
+    letter-spacing: 1px;/* 자간 넓히기 */
+}
+.wrap .others{
+    text-align: center;
+}
+/* a(anchor태그) 인라인요소 = 크기가 없다 */
+.wrap .others a{
+    display: inline-block; /* 가로로 배치되면서 크기를 가질 수 있게 된다 */
+    width: 30px;
+    height: 30px;
+    background-color: rgb(9, 95, 141);
+   
+    border-radius: 50%;
+    margin: 0px 10px;
+}
+
+.wrap .others a:nth-of-type(1){
+    background-color:rgb(16, 147, 217) ;
+}
+.wrap .others a:nth-of-type(2){
+    background-color:rgb(12, 113, 167) ;
+}
+.wrap .others a:nth-of-type(3){
+    background-color:rgb(7, 60, 88) ;
+}
+.wrap .others a:nth-of-type(4){
+    background-color:rgb(2, 21, 32) ;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>애니메이션효과</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: aquamarine;
+        margin: 20px;
+      }
+      .box1:hover {
+        background-color: brown;
+        transition-duration: 1s;
+        transition-timing-function: linear;
+      }
+      .box2:hover:hover {
+        background-color: rgb(34, 102, 186);
+        border-radius: 50%;
+        transition-duration: 1s,3s;
+        transition-timing-function: ease-in-out;
+      }
+      .box3:hover:hover {
+        background-color: rgb(203, 245, 13);
+        border-radius: 30%;
+        transform: translate(400px);
+  
+        transition: 2s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+  </body>
+</html>

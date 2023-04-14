@@ -1,0 +1,6 @@
+#uid:not(:valid) {
+  background-color: red;
+}
+#uid:valid {
+  background-color: green;
+}

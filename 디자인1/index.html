@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디자인-A안</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://kit.fontawesome.com/712b45d512.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <header><!-- HTML <header> 요소는 소개 및 탐색에 도움을 주는 콘텐츠를 나타냅니다. -->
+        <div class="container">
+            <h1><img src="../image/home-solid.svg" width="50px" height="50px"></h1>
+            <nav class="main-navigation">
+                <a href="">HTML</a>
+                <a href="">CSS</a>
+                <a href="">JAVASCRIPT</a>
+                <a href="">REACT</a>
+                <a href=""class="btn">문의하기</a>
+            </nav>
+            <button class="more-btn"><!-- 버거아이콘 -->
+            <i class="icon"><!-- 버거이후 X아이콘 -->
+
+            </i>
+            </button>
+            <script>
+                const moreBtn = document.querySelector('.more-btn')/* .more-btn클래스에 이벤트걸거어ㅑ */
+                const mainNavigation=document.querySelector(".main-navigation");
+                moreBtn.addEventListener('click',()=>{
+                    alert("11");
+                    moreBtn.classList.toggle("active");
+                    mainNavigation.classList.toggle("active");
+                })
+            
+            </script>
+        </div>
+    </header>
+    <main class="main-bg">
+        <div class="video-wrap">
+            <video src="../image/forest.mp4"muted autoplay loop></video>
+        </div>
+        <div class="container">
+            <div class="text-wrap">
+              <h2>MVC패턴<br>계층형게시판</h2>
+              <h3>JAVA + Servlet + JSP + Spring</h3>
+              <h3>HTML5 + CSS3 + JavaScript + React</h3>
+              <p>Front-End에서 부터 Back-End까지<br>풀스택 개발자를 양성하는 강좌입니다</p>
+              <div class="btn-wrap">
+                <a href="#" class="btn">강좌 등록하기</a>
+                <a href="#" class="btn ghost-btn">가입하기</a>
+              </div>
+            </div>
+          </div>
+        </main>
+</body>
+</html>

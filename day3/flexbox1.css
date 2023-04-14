@@ -1,0 +1,23 @@
+html, body{
+    height: 100%;
+}
+.container{/* 감싸고있는 디스플레이를 플렉스로 옮겨보자 */
+    height: 100%;/* 컨테이너(div)의 부모(=body)의 100%를 채운다 */
+    background-color: antiquewhite;
+    display: flex;/* 왼쪽에서 오른쪽으로 정렬 디폴트값 */
+    /* flex-direction: row; */
+    /* flex-direction: column; */
+    /* flex-direction: row-reverse; */
+    /* flex-direction: column-reverse; */
+    flex-direction: row;
+    justify-content: space-between;/* 중간은 중복된다 */
+    /* justify-content: space-around;  여백이 똑같다*/
+    flex-wrap: wrap;/* 디폴트는 노랩 랩을 하면 한 줄 꽉차면 자동 줄바꿈 */
+}
+.item {/* 디브태그 ->수직으로쌓인다 */
+    background-color: darkgreen;
+    width: 50px;
+    height: 50px;
+    border:  1px solid black;
+
+}

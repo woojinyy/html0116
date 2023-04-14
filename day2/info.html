@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- html선언문 -->
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- UTF-8은 전세계 표준 포맷 디폴트값 -->
+    <!-- explorer에 다양한 버전 존재 낮은 버전 동작이 될 때 최신 익스플로러로 렌더링해줌 -->
+    <!-- edge버전부터 크롬V8엔진 사용 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- viewport가 있어야 모바일 디바이스가 모바일페이지를 제대로 출력가능
+    하이브리드앱(네이티브+웹앱)으로 개발을 많이 하기 때문에 
+    요소= 태그 = 노드 일단은
+    블럭요소 자체 크기 O 자동 줄바꿈 O 
+    인라인요소 자체크기 X 자동줄바꿈 X <br/> 써야해 리액트 안됨
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>윈도우사이즈</title>
+  </head>
+  <body>
+    <script>
+      //window.addEventListener("resize", () => {
+
+        //옛날방식
+        /* 창사이즈 바뀔때마다 이벤트 발생 */
+        window.addEventListener("resize", function () {
+        // screen은 모니터의 화면 크기이다
+        console.log(
+          `window.screen : ${window.screen.width}, ${window.screen.height}`
+        );
+        //전체적인 브라우저 크기 (url과 탭 포함) 탭마다세션아이디를 쿠키에 저장한다
+        console.log(
+          `window.outer : ${window.outerWidth}, ${window.outerHeight}`
+        );
+        //웹페이지+스크롤바
+        console.log(
+          `window.inner : ${window.innerWidth}, ${window.innerHeight}`
+        );
+        //스크롤바가 제외된 문서만의 사이즈
+        console.log(
+          `document : ${document.documentElement.clientWidth}, ${document.documentElement.clientHeight}`
+        );
+      }); /* arrowfunction  자바 람다식과 컨셉이 같다 */
+    </script>
+    <!-- css적용// .은 css사용할거야 -->
+    <div class="tag">윈도우사이즈</div>
+
+    <!-- 디브는 블럭요소 -->
+    비교<img src="#" / ><!-- 이미지는 인라인요소 -->
+    <style>
+      .tag {
+        margin-bottom: 30px; /* 마진의 아래만 */
+        margin-top: 16px; /* 마진의 위만 */
+        padding: 16px; /* 상하좌우 다 16px */
+        font-size: 48px /* 컨텐츠를 감싼다 */;
+        display: inline-block;
+        background-color: bisque;
+      }
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: blueviolet;
+        border: 2px solid black;
+      }
+    </style>
+  </body>
+</html>
